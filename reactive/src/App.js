@@ -34,9 +34,8 @@ function App() {
     <div>
       <h2>Lets Get Started!!!</h2>
       <Expenses 
-        date={expenses.date}
-        title={expenses.title}
-        amount={expenses.amount}/>
+        items={expenses}
+        />
     </div>
   );
 }
