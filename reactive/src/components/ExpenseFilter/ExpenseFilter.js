@@ -1,4 +1,5 @@
 import React from 'react'
+import './ExpenseFilter.css'
 
 function ExpenseFilter() {
     return (

@@ -1,10 +1,14 @@
 import React from 'react';
 import ExpenseItems from './ExpenseItems';
 import './Expenses.css'
+import ExpenseFilter from './ExpenseFilter/ExpenseFilter'
 
 function Expenses(props) {
     return (
+    <div>
+        <ExpenseFilter />
         <div className="expenses">
+            
             <ExpenseItems 
                 title={props.items[0].title}
                 amount={props.items[0].amount}
@@ -26,6 +30,7 @@ function Expenses(props) {
                 amount={props.items[4].amount}
                 date={props.items[4].date}   />
         </div>
+    </div>
     )
 }
 
