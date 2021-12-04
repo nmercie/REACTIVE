@@ -4,9 +4,12 @@ import './Expenses.css'
 import ExpenseFilter from './ExpenseFilter/ExpenseFilter'
 
 function Expenses(props) {
+    const dateChangeHandler = date =>{
+        console.log('date is', date)
+    }
     return (
     <div>
-        <ExpenseFilter />
+        <ExpenseFilter onDateChange={dateChangeHandler}/>
         <div className="expenses">
             
             <ExpenseItems 
