@@ -1,9 +1,10 @@
+import React, {useState} from 'react'
 import './App.css';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses';
 
 function App() {
-  const expenses = [
+  const DUMMYDATA = [
     {
       id: 'e1',
       title: 'Working out',
@@ -36,16 +37,21 @@ function App() {
     },
   ];
 
-  const newExpenseHandler = expense => {
-    console.log(expense);
-    console.log('In App.js');
+  const [enteredExpense, setEnteredExpense] = useState(DUMMYDATA)
+
+  const addExpenseHandler = expense =>{
+    setEnteredExpense((prevExpenses) => {
+      return [expense, ...prevExpenses]
+    })
   }
+
+  
   return (
     <div>
       <h2>Lets Get Started!!!</h2>
-      <NewExpense onAddExpense={newExpenseHandler}/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses 
-        items={expenses}
+        items={enteredExpense}
         />
     </div>
   );

@@ -45,12 +45,12 @@ function ExpenseForm(props) {
         event.preventDefault();
 
         const expenseData = {
-            title: setEnteredTitle,
-            expense: setEnteredAmount,
-            date: new Date(setEnteredDate),
+            title: enteredTitle,
+            expense: EnteredAmount,
+            date: new Date(enteredDate),
         }
         console.log(expenseData);
-        props.newExpenseData();
+        props.onSaveExpenseData(expenseData);
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
