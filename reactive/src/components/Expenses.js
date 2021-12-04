@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ExpenseItems from './ExpenseItems';
 import './Expenses.css'
 import ExpenseFilter from './ExpenseFilter/ExpenseFilter'
 
 function Expenses(props) {
-    const dateChangeHandler = date =>{
-        console.log('date is', date)
+    const [setDate, dateSet] = useState();
+
+    
+    const selectedDateHandler = dates => {
+        dateSet(dates)
+        console.log(dates)
     }
     return (
     <div>
-        <ExpenseFilter onDateChange={dateChangeHandler}/>
+        
         <div className="expenses">
-            
+        <ExpenseFilter selected={setDate} onDateChange={selectedDateHandler}/>   
             <ExpenseItems 
                 title={props.items[0].title}
                 amount={props.items[0].amount}
