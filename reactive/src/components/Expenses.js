@@ -5,7 +5,6 @@ import ExpenseFilter from './ExpenseFilter/ExpenseFilter'
 
 function Expenses(props) {
     const [setDate, dateSet] = useState();
-
     
     const selectedDateHandler = dates => {
         dateSet(dates)
@@ -17,11 +16,12 @@ function Expenses(props) {
         <div className="expenses">
         <ExpenseFilter selected={setDate} onDateChange={selectedDateHandler}/>   
             {props.items.map(
-                expense => 
+                ex => 
                 <ExpenseItems
-                    title={expense.title}
-                    expense={expense.amount}
-                    date={expense.date}   
+                    key={ex.id}
+                    title={ex.title}
+                    expense={ex.amount}
+                    date={ex.date}   
                  /> )}
         </div>
     </div>
