@@ -4,7 +4,7 @@ import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses';
 
 function App() {
-  const DUMMYDATA = [
+  const DUMMY_DATA = [
     {
       id: 'e1',
       title: 'Working out',
@@ -37,7 +37,7 @@ function App() {
     },
   ];
 
-  const [enteredExpense, setEnteredExpense] = useState(DUMMYDATA)
+  const [enteredExpense, setEnteredExpense] = useState(DUMMY_DATA)
 
   const addExpenseHandler = expense =>{
     setEnteredExpense((prevExpenses) => {
