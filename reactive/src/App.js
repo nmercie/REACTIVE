@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './App.css';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses';
+import Chart from './components/Chart/ChartBar';
 
 function App() {
   const DUMMY_DATA = [
@@ -49,6 +50,7 @@ function App() {
   return (
     <div>
       <h2>Lets Get Started!!!</h2>
+      <Chart />
       <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses 
         items={enteredExpense}
