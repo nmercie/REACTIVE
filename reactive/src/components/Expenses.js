@@ -20,7 +20,7 @@ function Expenses(props) {
                 <ExpenseItems
                     key={ex.id}
                     title={ex.title}
-                    expense={ex.amount}
+                    amount={ex.amount}
                     date={ex.date}   
                  /> )}
         </div>
